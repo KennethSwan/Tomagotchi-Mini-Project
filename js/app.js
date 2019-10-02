@@ -24,35 +24,44 @@ class Tomagotchi {
 }
 // const pet = new Tomagotchi();
 
-
 const game = {
 	pet: null,
+	time: 0,
 
-//time
-//print values. When one changes, show them all. 
-// don't try to over think it. One step at a time.
-// need to set up a timer for each property to get to ten 
-//Prompt user to do something if the level of one or 
-//more properties gets to zero. 
-// When player clicks a button, decrease that property by 1
+	//time
+	//print values. When one changes, show them all. 
+	// don't try to over think it. One step at a time.
+	// need to set up a timer for each property to get to ten 
+	//Prompt user to do something if the level of one or 
+	//more properties gets to zero. 
+	// When player clicks a button, decrease that property by 1
 	start(name){
+
+		// instantiate the Tomagotchi class
+		// dude is now an object made from the Toma class
 		const dude = new Tomagotchi(name);
-		// console.log(dude);
+
+		// dude is being set as a property of (variable) in the game object.
 		this.pet = dude;
+
+		this.setTimer()
 	},
  
- 	setTimer() {
-	const $timer = $('#timer');
-	const interval = setInterval(() =>{
-		if(this.time === 0){
-			clearInterval(interval);
-			this.age++
-		}	else{
-			this.time--
-		}
-		$timer.text(`timer: ${this.time}s`)
-	}, 10000)
-} 
+ 	setTimer(){
+		const $timer = $('#timer');
+		const interval = setInterval(() => {
+			console.log("hey");
+			this.time++
+			this.pet.age++
+			console.log(this.pet.age);
+			
+			if(this.time === 0) {
+				clearInterval(interval);
+			}
+
+			$timer.text(`timer: ${this.time}s`)
+		}, 1000)
+	} 
 }
 //Listeners {
 // Add listener for feeding, going to sleep, and playing
