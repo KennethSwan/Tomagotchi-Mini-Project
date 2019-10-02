@@ -55,6 +55,8 @@ const game = {
 		$hunger.text(`hunger: ${this.pet.hunger}`);
 		const $timer = $('#timer');
 		$timer.text(`timer: ${this.time}s`)
+		const $boredom = $('#boredom');
+		$boredom.text(`boredom: ${this.pet.boredom}`)
 
 	},
  
@@ -66,13 +68,17 @@ const game = {
 				this.pet.age++;
 			}	
 			
-			if(this.time % 6 === 0) {
+			if(this.time % 5 === 0) {
 				this.pet.hunger++;
+			}
+
+			if (this.time %8 === 0) {
+				this.pet.boredom++;
 			}
 
 			this.printProps() // call this any time any value changes
 
-		}, 100)
+		}, 1000)
 	} 
 }
 //Listeners {
