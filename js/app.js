@@ -6,26 +6,27 @@ class Tomagotchi {
 		this.age = "28 weeks";
 		this.name = name; 		//1 interval, no more than one. Use setInterval()
 	} 
-	name(){
+	nameGreet(){
 		console.log("Hey! I`m " + " ,man!");
 	}
-	hunger(){
+	hungerGreet(){
 		console.log("I`m starving, man!");
 	}
-	sleepines(){
+	sleepinesGreet(){
 		console.log("I need to get some sleep, man!");
 	}
-	boredom(){
+	boredomGreet(){
 		console.log("I'm so bored, man! Let's bowl or something!");
 	}
-	die(){
+	dieGreet(){
 		console.log("This isn`t `nam Walter! There are rules!");		
 	};
 }
-const dude = new Tomagotchi('The Dude');	
+// const pet = new Tomagotchi();
 
 
 const game = {
+	pet: null,
 //time
 //print values. When one changes, show them all. 
 // don't try to over think it. One step at a time.
@@ -34,13 +35,11 @@ const game = {
 //more properties gets to zero. 
 // When player clicks a button, increase that property by 1
 	start(name){
- 		console.log("It actually works");
- 		console.log(name);
+		const dude = new Tomagotchi(name);
+		console.log(dude);
+		this.pet = dude;
 	}
 } 
-
-
-
 //Listeners {
 // Add listener for feeding, going to sleep, and playing
 // Make character move around screen randomly as time pass.
@@ -50,7 +49,7 @@ const game = {
 // 	$('.Wake Up Dude')
 // }
  $('form').on('submit', (event) => {
-    console.log('clicked');  
+    console.log('starting game');  
     console.log( $('#input-box').val() );
     let petName = $('#input-box').val();
     event.preventDefault();
