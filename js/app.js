@@ -23,7 +23,7 @@ class Tomagotchi {
 	};
 }
 const dude = new Tomagotchi('The Dude');	
-console.log(dude);
+
 
 const game = {
 //time
@@ -33,6 +33,10 @@ const game = {
 //Prompt user to do something if the level of one or 
 //more properties gets to zero. 
 // When player clicks a button, increase that property by 1
+	start(name){
+ 		console.log("It actually works");
+ 		console.log(name);
+	}
 } 
 
 
@@ -48,8 +52,9 @@ const game = {
  $('form').on('submit', (event) => {
     console.log('clicked');  
     console.log( $('#input-box').val() );
+    let petName = $('#input-box').val();
     event.preventDefault();
-   
+	game.start(petName)  
   });
 
 
