@@ -20,8 +20,11 @@ class Tomagotchi {
 	}
 	die(){
 		console.log("This isn`t `nam Walter! There are rules!");		
-	}
+	};
 }
+const dude = new Tomagotchi('The Dude');	
+console.log(dude);
+
 const game = {
 //time
 //print values. When one changes, show them all. 
@@ -46,6 +49,7 @@ const game = {
     console.log('clicked');  
     console.log( $('#input-box').val() );
     event.preventDefault();
+   
   });
 
 
