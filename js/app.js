@@ -46,21 +46,33 @@ const game = {
 
 		this.setTimer()
 	},
+
+	// call this any time any value changes
+	printProps() {
+		const $age = $('#age')
+		$age.text(`age: ${this.pet.age}`)
+		const $hunger = $('#hunger');
+		$hunger.text(`hunger: ${this.pet.hunger}`);
+		const $timer = $('#timer');
+		$timer.text(`timer: ${this.time}s`)
+
+	},
  
  	setTimer(){
-		const $timer = $('#timer');
-		const interval = setInterval(() => {
-			console.log("hey");
+		const interval = setInterval(() => {	
 			this.time++
-			this.pet.age++
-			console.log(this.pet.age);
 			
-			if(this.time === 0) {
-				clearInterval(interval);
+			if (this.time % 10 === 0) {
+				this.pet.age++;
+			}	
+			
+			if(this.time % 6 === 0) {
+				this.pet.hunger++;
 			}
 
-			$timer.text(`timer: ${this.time}s`)
-		}, 1000)
+			this.printProps() // call this any time any value changes
+
+		}, 100)
 	} 
 }
 //Listeners {
