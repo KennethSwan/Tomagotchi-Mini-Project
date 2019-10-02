@@ -1,8 +1,8 @@
 class Tomagotchi {
 	constructor(name){
-		this.boredom = [];	//
-		this.sleepiness = []; // These are starting parameters, will need to 
-		this.hunger = []; // increase as time goes on. 
+		this.boredom = 0;	//
+		this.sleepiness = 0; // These are starting parameters, will need to 
+		this.hunger = 0; // increase as time goes on. 
 		this.age = 0;
 		this.name = name; 		//1 interval, no more than one. Use setInterval()
 	} 
@@ -71,13 +71,16 @@ const game = {
 // jQuery(document).ready(function($){
 // 	$('.Wake Up Dude')
 // }
- $('form').on('submit', (event) => {
+$('form').on('submit', (event) => {
     event.preventDefault();
     console.log('starting game');  
     console.log( $('#input-box').val() + ' is my name!' );
     let petName = $('#input-box').val();
 	game.start(petName)  
-  });
+});
 
 
-//}
+// 1. print values method that does it jQuery
+// 2. get hungrier as time passes -- use your print values function
+// 3. pressing button should change hunger
+
