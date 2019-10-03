@@ -1,4 +1,7 @@
 body {
-	background-color: blue;
-	color: gold;
+	background-color: lightblue;
+	color: maroon;
 } 
+header{
+	width: 100px;
+}
