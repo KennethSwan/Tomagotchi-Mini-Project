@@ -59,43 +59,43 @@ const game = {
         $boredom.text(`boredom: ${this.pet.boredom}`)
         const $sleepiness = $('#sleepiness');
         $sleepiness.text(`sleepiness: ${this.pet.sleepiness}`)
-        $('#feed').on('click', (event) => {
-            this.pet.hunger--;
-        })
-        $('#play').on('click', (event) => {
-            this.pet.boredom--;
-        })    
-    },
+    },    
+
+    feedTama() {
+        this.pet.hunger--;
+        this.printProps()
+        console.log("Nom Nom Nom");
+    },     
 
 	setTimer() {
-    const interval = setInterval(() => {
-        this.time++
+        const interval = setInterval(() => {
+            this.time++
 
-        if (this.time % 10 === 0) {
-            this.pet.age++;
-        }
-        if (this.time % 5 === 0) {
-            this.pet.hunger++;
-        }
-        if (this.pet.hunger == 10) {
-            console.log("Pet has died of hunger!");
-        }
-        if (this.time % 8 === 0) {
-            this.pet.boredom++;
-        }
-        if (this.pet.boredom == 10) {
-            console.log("Pet has died of boredom!");
-        }
-        if (this.time % 3 === 0) {
-            this.pet.sleepiness++;
-        }
-        if (this.pet.sleepiness == 10) {
-            console.log("Pet has died of lack of sleep!");
-        }
+            if (this.time % 10 === 0) {
+                this.pet.age++;
+            }
+            if (this.time % 5 === 0) {
+                this.pet.hunger++;
+            }
+            if (this.pet.hunger == 10) {
+                console.log("Pet has died of hunger!");
+            }
+            if (this.time % 8 === 0) {
+                this.pet.boredom++;
+            }
+            if (this.pet.boredom == 10) {
+                console.log("Pet has died of boredom!");
+            }
+            if (this.time % 3 === 0) {
+                this.pet.sleepiness++;
+            }
+            if (this.pet.sleepiness == 10) {
+                console.log("Pet has died of lack of sleep!");
+            }
 
-        this.printProps() // call this any time any value changes
-    }, 1000)
-}
+            this.printProps() // call this any time any value changes
+        }, 1000)
+    }
 }
 
 //Listeners {
@@ -113,7 +113,13 @@ $('form').on('submit', (event) => {
     let petName = $('#input-box').val();
     game.start(petName)
 });
-
+$('#feed').on('click', (event) => {
+    game.feedTama()
+});
+$('#play').on('click', (event) => {
+    this.pet.boredom--;
+    console.log("That rug really ties the whole room together");
+}); 
 
 // 1. print values method that does it jQuery
 // 2. get hungrier as time passes -- use your print values function
