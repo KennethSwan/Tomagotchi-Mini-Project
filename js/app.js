@@ -60,9 +60,13 @@ const game = {
         const $sleepiness = $('#sleepiness');
         $sleepiness.text(`sleepiness: ${this.pet.sleepiness}`)
         $('#feed').on('click', (event) => {
-            this.pet.hunger-=1;
-    })
-},
+            this.pet.hunger--;
+        })
+        $('#play').on('click', (event) => {
+            this.pet.boredom--;
+        })    
+    },
+
 	setTimer() {
     const interval = setInterval(() => {
         this.time++
