@@ -1,26 +1,25 @@
-class Tomagotchi {
-    constructor(name) {
-        this.boredom = 0; //
-        this.sleepiness = 0; // These are starting parameters, will need to 
-        this.hunger = 0; // increase as time goes on. 
-        this.age = 0;
-        this.name = name; //1 interval, no more than one. Use setInterval()
-    }
-    nameGreet() {
-        console.log("Hey! I`m " + " ,man!");
-    }
-    hungerGreet() {
-        console.log("I`m starving, man!");
-    }
-    sleepinesGreet() {
-        console.log("I need to get some sleep, man!");
-    }
-    boredomGreet() {
-        console.log("I'm so bored, man! Let's bowl or something!");
-    }
-    dieGreet() {
-        console.log("This isn`t `nam Walter! There are rules!");
-    }
+class Tomagotchi {constructor(name) {
+    this.boredom = 0; //
+    this.sleepiness = 0; // These are starting parameters, will need to 
+    this.hunger = 0; // increase as time goes on. 
+    this.age = 0;
+    this.name = name; //1 interval, no more than one. Use setInterval()
+}
+nameGreet() {
+    console.log("Hey! I`m " + " ,man!");
+}
+hungerGreet() {
+    console.log("I`m starving, man!");
+}
+sleepinesGreet() {
+    console.log("I need to get some sleep, man!");
+}
+boredomGreet() {
+    console.log("I'm so bored, man! Let's bowl or something!");
+}
+dieGreet() {
+    console.log("This isn`t `nam Walter! There are rules!");
+}
 }
 // const pet = new Tomagotchi();
 
@@ -59,21 +58,21 @@ const game = {
         $boredom.text(`boredom: ${this.pet.boredom}`)
         const $sleepiness = $('#sleepiness');
         $sleepiness.text(`sleepiness: ${this.pet.sleepiness}`)
-    },    
+    },
 
     feedTama() {
         this.pet.hunger--;
         this.printProps()
         console.log("Nom Nom Nom");
-    }, 
+    },
 
     playWithTama() {
         this.pet.boredom--;
         this.printProps()
         console.log("That rug really tied the room together...");
-    },    
+    },
 
-	setTimer() {
+    setTimer() {
         const interval = setInterval(() => {
             this.time++
 
@@ -84,33 +83,36 @@ const game = {
                 this.pet.hunger++;
             }
             if (this.pet.hunger == 10) {
+                clearInterval(interval)
                 console.log("Pet has died of hunger!");
             }
             if (this.time % 8 === 0) {
                 this.pet.boredom++;
             }
             if (this.pet.boredom == 10) {
+                clearInterval(interval)
                 console.log("Pet has died of boredom!");
             }
             if (this.time % 3 === 0) {
                 this.pet.sleepiness++;
             }
             if (this.pet.sleepiness == 10) {
+                clearInterval(interval)
                 console.log("Pet has died of lack of sleep!");
             }
 
             this.printProps() // call this any time any value changes
-        }, 1000)
+        }, 100)
     }
 }
 
 //Listeners {
 // Add listener for feeding, going to sleep, and playing
 // Make character move around screen randomly as time pass.
-// Use jquery animation 	
+// Use jquery animation     
 // Make The Dude appear when "Wake up The Dude" is clicked. 
 // jQuery(document).ready(function($){
-// 	$('.Wake Up Dude')
+//  $('.Wake Up Dude')
 // }
 $('form').on('submit', (event) => {
     event.preventDefault();
@@ -126,7 +128,7 @@ $('#play').on('click', (event) => {
     game.playWithTama()
     // this.pet.boredom--;
     // console.log("That rug really ties the whole room together");
-}); 
+});
 
 // 1. print values method that does it jQuery
 // 2. get hungrier as time passes -- use your print values function
