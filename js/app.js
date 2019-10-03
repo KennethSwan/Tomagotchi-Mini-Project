@@ -69,17 +69,24 @@ const game = {
 			
 			if (this.time % 10 === 0) {
 				this.pet.age++;
-			}	
-			
-			if(this.time % 5 === 0) {
-				this.pet.hunger++;
 			}
-
+			if (this.time % 5 === 0) {
+				this.pet.hunger++;	
+			}
+			if (this.pet.hunger == 10){
+				console.log("Pet has died of hunger!");
+			}
 			if (this.time %8 === 0) {
 				this.pet.boredom++;
 			}
+			if (this.pet.boredom == 10){
+				console.log("Pet has died of boredom!");
+			}
 			if (this.time %3 === 0) {
 				this.pet.sleepiness++;
+			}
+			if (this.pet.sleepiness == 10) {
+				console.log("Pet has died of lack of sleep!");
 			}
 
 			this.printProps() // call this any time any value changes
