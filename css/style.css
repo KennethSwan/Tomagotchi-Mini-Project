@@ -1,17 +1,19 @@
 body {
-	background-color: lightblue;
-	color: maroon;
-} 
-img{
-	display:block;
-	height: 400px;
-	margin: 10px;
-	padding-top: 20px;
-	position: relative;
-	animation-name: ;
-	animation-duration: infinite;
+    background-color: lightblue;
+    color: darkred;
 }
-header{
-	display: block;
-	padding-bottom: 10px;
+
+img {
+    display: block;
+    height: 400px;
+    margin: 10px;
+    padding-top: 20px;
+    position: relative;
+    animation-name: ;
+    animation-duration: infinite;
+}
+
+header {
+    display: block;
+    padding-bottom: 10px;
 }

@@ -80,6 +80,9 @@ const game = {
         $("img").attr("src", "https://cdn.vox-cdn.com/thumbor/D-0GKk0F8D-hvI0XIoMqQQWaLMk=/0x0:2320x1302/1200x800/filters:focal(1134x405:1504x775)/cdn.vox-cdn.com/uploads/chorus_image/image/58966233/Screen_Shot_2018_03_09_at_8.08.00_AM.0.png")
         console.log("Goodnight, man!");
     },
+    wakeUp() {
+    $("img").attr("src", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8-2L0rgYS6dr_fwBv4mjdms9pf9wVl9V7M59xzamOUHCcvt1Q")
+},
 
     setTimer() {
         const interval = setInterval(() => {
@@ -146,4 +149,7 @@ $('#play').on('click', (event) => {
 });
 $('#off').on('click', (event) => {
     game.sleepTama()
+});
+$('#on').on('click', (event) => {
+    game.wakeUp()
 });
