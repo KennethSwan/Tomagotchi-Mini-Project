@@ -59,15 +59,10 @@ const game = {
         $boredom.text(`boredom: ${this.pet.boredom}`)
         const $sleepiness = $('#sleepiness');
         $sleepiness.text(`sleepiness: ${this.pet.sleepiness}`)
-    },
-
-    stayingAlive() {
-    	$('#feed').on('click', (event) => {
-    		// this.pet.hunger--
-    	}); 
-        console.log('It`s alive!');   
-    },
-
+        $('#feed').on('click', (event) => {
+            this.pet.hunger-=1;
+    })
+},
 	setTimer() {
     const interval = setInterval(() => {
         this.time++
@@ -95,10 +90,10 @@ const game = {
         }
 
         this.printProps() // call this any time any value changes
-
     }, 1000)
 }
 }
+
 //Listeners {
 // Add listener for feeding, going to sleep, and playing
 // Make character move around screen randomly as time pass.
