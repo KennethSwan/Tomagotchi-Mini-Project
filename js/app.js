@@ -65,7 +65,13 @@ const game = {
         this.pet.hunger--;
         this.printProps()
         console.log("Nom Nom Nom");
-    },     
+    }, 
+
+    playWithTama() {
+        this.pet.boredom--;
+        this.printProps()
+        console.log("That rug really tied the room together...");
+    },    
 
 	setTimer() {
         const interval = setInterval(() => {
@@ -117,8 +123,9 @@ $('#feed').on('click', (event) => {
     game.feedTama()
 });
 $('#play').on('click', (event) => {
-    this.pet.boredom--;
-    console.log("That rug really ties the whole room together");
+    game.playWithTama()
+    // this.pet.boredom--;
+    // console.log("That rug really ties the whole room together");
 }); 
 
 // 1. print values method that does it jQuery
