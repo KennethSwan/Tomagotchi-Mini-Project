@@ -93,12 +93,17 @@ const game = {
                 clearInterval(interval)
                 console.log("Pet has died of boredom!");
             }
-            if (this.time % 3 === 0) {
+            if (this.time % 10 === 0) {
                 this.pet.sleepiness++;
             }
             if (this.pet.sleepiness == 10) {
                 clearInterval(interval)
                 console.log("Pet has died of lack of sleep!");
+            }
+            if(this.pet.hunger == 10 || this.pet.sleepiness == 10 || this.pet.boredom == 10){
+                $("img").attr("src", "https://i.imgur.com/EwCm14R.gif?noredirect")
+                console.log("this is the id=\"main\" div that we want to change the src attribute for");
+                console.log($("img"));
             }
 
             this.printProps() // call this any time any value changes
@@ -125,11 +130,7 @@ $('#feed').on('click', (event) => {
     game.feedTama()
 });
 $('#play').on('click', (event) => {
-    game.playWithTama()
-    // this.pet.boredom--;
-    // console.log("That rug really ties the whole room together");
-});
-
-// 1. print values method that does it jQuery
-// 2. get hungrier as time passes -- use your print values function
-// 3. pressing button should change hunger
+    game.playWithTama()   
+    this.pet.boredom--;
+    console.log("That rug really ties the whole room together");
+}); 
