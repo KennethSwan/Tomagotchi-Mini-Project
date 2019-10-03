@@ -57,6 +57,9 @@ const game = {
 		$timer.text(`timer: ${this.time}s`)
 		const $boredom = $('#boredom');
 		$boredom.text(`boredom: ${this.pet.boredom}`)
+		const $sleepiness = $('#sleepiness');
+		$sleepiness.text(`sleepiness: ${this.pet.sleepiness}`)
+
 
 	},
  
@@ -74,6 +77,9 @@ const game = {
 
 			if (this.time %8 === 0) {
 				this.pet.boredom++;
+			}
+			if (this.time %3 === 0) {
+				this.pet.sleepiness++;
 			}
 
 			this.printProps() // call this any time any value changes
