@@ -2,6 +2,8 @@ body {
 	background-color: lightblue;
 	color: maroon;
 } 
-header{
-	width: 100px;
+img{
+	height: 200px;
+	margin: 10px;
+	block: inline;
 }
